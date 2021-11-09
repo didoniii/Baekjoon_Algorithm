@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args){
+		int a,b;
+		Scanner sc = new Scanner(System.in);
+		a= sc.nextInt();
+		b= sc.nextInt();
+		
+		
+		System.out.println(a*(b%10));
+		System.out.println(a*(b%100/10));
+		System.out.println(a*(b/100));
+		System.out.println(a*b);
+    }
+}
+
+
+
+
+
+두번째방법
+
+
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int A = sc.nextInt();
+		String B = sc.next();
+        sc.close();
+        System.out.println(A*(B.charAt(2) - '0'));
+        System.out.println(A*(B.charAt(1) - '0'));
+        System.out.println(A*(B.charAt(0) - '0'));
+		System.out.println(A*Integer.parseInt(B));
+
+
+
+charAt 은 문자들이 모인 배열이라고 보고 인덱스를 참조하여 해당 문자를 반환시키는 방법이다.
+String B =  sc.next(); ->385를 문자로 받는다.
+		-> charAt(0) = 3, chatAt(1) = 8, charAt(2) = 5 이라는 것을 이용.
+
+	그러나 문자열로 받아들인것이기 때문에 숫자로 입력된 것을 아스키코드로
+	받아들였기 때문에 0을 빼준값으로 계산해주고
+	마지막에 A전체 B전체의 값을 출력할때는 B가 문자이기 때문에 int형으로 변화해서
+	출력해주는 Integer.parseInt함수를 이용한것이다.
